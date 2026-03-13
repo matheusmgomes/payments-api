@@ -7,28 +7,16 @@ import type { InferInput, SimpleError } from '@vinejs/vine/types'
 export type ParamValue = string | number | bigint | boolean
 
 export interface Registry {
-  'gateways.index': {
-    methods: ["GET","HEAD"]
-    pattern: '/api/v1/gateways'
+  'transactions.store': {
+    methods: ["POST"]
+    pattern: '/api/v1/transactions'
     types: {
       body: {}
       paramsTuple: []
       params: {}
       query: {}
-      response: ExtractResponse<Awaited<ReturnType<import('#controllers/gateways_controller').default['index']>>>
-      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/gateways_controller').default['index']>>>
-    }
-  }
-  'products.index': {
-    methods: ["GET","HEAD"]
-    pattern: '/api/v1/products'
-    types: {
-      body: {}
-      paramsTuple: []
-      params: {}
-      query: {}
-      response: ExtractResponse<Awaited<ReturnType<import('#controllers/products_controller').default['index']>>>
-      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/products_controller').default['index']>>>
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/transactions_controller').default['store']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/transactions_controller').default['store']>>>
     }
   }
 }

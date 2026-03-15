@@ -1,13 +1,15 @@
 import Transaction from '#models/transaction'
 import PaymentService from '#services/payment_service'
 import TransactionProductService from '#services/transaction_product_service'
+import { createTransactionValidator } from '#validators/transaction'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class TransactionsController {
   async store({ request, response }: HttpContext) {
     try {
       //seleciona o que vem do request da API
-      const data = request.only(['client_id', 'product_id', 'quantity', 'card_number', 'cvv'])
+      // const data = request.only(['client_id', 'product_id', 'quantity', 'card_number', 'cvv'])
+      const data = await request.validateUsing(createTransactionValidator)
 
       //cria um registro do tipo TransactionProduct, que armazena o Product e a quantidade enviada pela requisição
       const transactionProdService = await new TransactionProductService().create(

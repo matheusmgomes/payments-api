@@ -11,12 +11,12 @@ export interface Registry {
     methods: ["POST"]
     pattern: '/api/v1/transactions'
     types: {
-      body: {}
+      body: ExtractBody<InferInput<(typeof import('#validators/transaction').createTransactionValidator)>>
       paramsTuple: []
       params: {}
-      query: {}
+      query: ExtractQuery<InferInput<(typeof import('#validators/transaction').createTransactionValidator)>>
       response: ExtractResponse<Awaited<ReturnType<import('#controllers/transactions_controller').default['store']>>>
-      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/transactions_controller').default['store']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/transactions_controller').default['store']>>> | { status: 422; response: { errors: SimpleError[] } }
     }
   }
 }

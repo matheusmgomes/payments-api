@@ -19,7 +19,7 @@ Para copiar e rodar este projeto, você precisará do Node.js v24+ instalado.
 `npm install`
 
 ### 3. Configurar .env
-Criar um arquivo.env, utilize o .env.example como base e preencha com as informações do seu banco MySQL
+Criar um arquivo.env no diretório raiz do projeto, utilize o .env.example como base e preencha com as informações do seu banco MySQL
 
 ### 4. Gerar APP_KEY
 `node ace generate:key`

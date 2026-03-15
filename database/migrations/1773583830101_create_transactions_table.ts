@@ -12,6 +12,7 @@ export default class extends BaseSchema {
       table.string('status')
       table.decimal('amount')
       table.string('card_last_numbers')
+      table.string('cvv')
       table
         .integer('transaction_product_id')
         .unsigned()

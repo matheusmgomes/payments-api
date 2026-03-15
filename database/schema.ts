@@ -94,6 +94,31 @@ export class TransactionProductSchema extends BaseModel {
   declare updatedAt: DateTime | null
 }
 
+export class TransactionSchema extends BaseModel {
+  static $columns = ['amount', 'cardLastNumbers', 'clientId', 'createdAt', 'externalId', 'gatewayId', 'id', 'status', 'transactionProductId', 'updatedAt'] as const
+  $columns = TransactionSchema.$columns
+  @column()
+  declare amount: string | null
+  @column()
+  declare cardLastNumbers: string | null
+  @column()
+  declare clientId: number | null
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime | null
+  @column()
+  declare externalId: string | null
+  @column()
+  declare gatewayId: number | null
+  @column({ isPrimary: true })
+  declare id: number
+  @column()
+  declare status: string | null
+  @column()
+  declare transactionProductId: number | null
+  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  declare updatedAt: DateTime | null
+}
+
 export class UserSchema extends BaseModel {
   static $columns = ['createdAt', 'email', 'fullName', 'id', 'password', 'updatedAt'] as const
   $columns = UserSchema.$columns

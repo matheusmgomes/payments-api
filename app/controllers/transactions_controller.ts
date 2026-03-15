@@ -45,7 +45,7 @@ export default class TransactionsController {
       transaction.status = 'finished'
       await transaction.save()
 
-      return response.json({ transaction })
+      return response.status(201).json({ transaction })
     } catch (err) {
       return response.status(400).json({ err })
     }

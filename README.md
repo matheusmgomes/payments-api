@@ -15,7 +15,7 @@ Para copiar e rodar este projeto, você precisará do Node.js v24+ instalado.
 ``git clone https://github.com/matheusmgomes/payments-api.git``
 
 ### 2. Instalar dependências
-`cd payments-api  
+`cd payments-api<br>
 npm install`
 
 ### 3. Configurar .env
@@ -25,7 +25,7 @@ Criar um arquivo.env, utilize o .env.example como base e preencha com as informa
 `node ace generate:key`  
 
 ### 5. Executar migrations e seeds
-`node ace migration:run  
+`node ace migration:run<br>
 node ace db:seed`
 
 ### 4. Executar projeto

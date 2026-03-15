@@ -34,6 +34,7 @@ Criar um arquivo.env no diretório raiz do projeto, utilize o .env.example como 
 ## Testando a API
 `POST /transactions`<br>
 Gera uma nova transação que vai ser validada ou não pelos gateways mockados.<br>
+Os campos do request são validados pelo VineJS, caso falte um campo ou esteja com o tipo incorreto, a API vai retornar erro.<br>
 Exemplo de body de requisição:<br>
 ``{
   "client_id": 1,

@@ -30,3 +30,15 @@ Criar um arquivo.env no diretório raiz do projeto, utilize o .env.example como 
 
 ### 4. Executar projeto
 `npm run dev`
+
+## Testando a API
+`POST /transactions`
+Gera uma nova transação que vai ser validada ou não pelos gateways mockados.
+Exemplo de body de requisição:
+``{
+  "client_id": 1,
+  "product_id": 1,
+  "quantity": 3,
+  "card_number": "4111111111111111",
+  "cvv": "110"
+}``

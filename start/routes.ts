@@ -39,4 +39,4 @@ router.get('/', () => {
 // router.get('/gateways', [controllers.Gateways, 'index']).prefix('/api/v1')
 // router.get('/products', [controllers.Products, 'index']).prefix('/api/v1')
 
-router.post('/transactions', [controllers.Transactions, 'store']).prefix('/api/v1')
+// router.post('/transactions', [controllers.Transactions, 'store']).prefix('/api/v1')
